@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Result</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .result-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 50px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="result-card">
+
+        <h1>🎉 Quiz Finished!</h1>
+
+        <p>Your Score</p>
+
+        <div class="score">
+            {{ score }}/{{ total }}
+        </div>
+
+        {% if score == total %}
+            <p>Excellent! Perfect score 🚀</p>
+        {% elif score >= total/2 %}
+            <p>Good job! Keep learning 👍</p>
+        {% else %}
+            <p>Practice more, you can improve 💪</p>
+        {% endif %}
+
+        <a href="/" class="btn">
+            Try Again
+        </a>
+
+    </div>
+
+</body>
+</html>
